@@ -39,8 +39,8 @@ public class BlairBehaviour : MonoBehaviour
 
     void Jump()
     {
-        bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.8f, LayerMask.GetMask("Ground"));
-        print(isGrounded);
+        bool isGrounded = Physics2D.Linecast(transform.position, new Vector2(0.1f, 0.4f), LayerMask.GetMask("Ground"));
+        
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
