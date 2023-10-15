@@ -12395,6 +12395,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blair
       objectReference: {fileID: 0}
+    - target: {fileID: 3019214266670718873, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1855248784, guid: 8c86986b2d29a3aea851ef51d8433208, type: 3}
+    - target: {fileID: 3019214266670718873, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019214266670718873, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.85
@@ -12434,6 +12450,14 @@ PrefabInstance:
     - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596893456500054955, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.21875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596893456500054955, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.03125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
