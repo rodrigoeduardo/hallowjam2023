@@ -12,6 +12,7 @@ public class BlairBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Physics2D.IgnoreLayerCollision(7, 7);
     }
 
     // Update is called once per frame
