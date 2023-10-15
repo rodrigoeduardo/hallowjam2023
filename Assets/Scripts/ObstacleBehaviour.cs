@@ -20,13 +20,13 @@ public class ObstacleBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Blair"))
+        if (!collision.gameObject.CompareTag("Noite"))
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            rb.constraints = RigidbodyConstraints2D.None;
         }
         else
         {
-            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
         }
     }
 }
