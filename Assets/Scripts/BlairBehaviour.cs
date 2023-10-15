@@ -10,8 +10,6 @@ public class BlairBehaviour : MonoBehaviour
     private SpriteRenderer sr;
     private Animator animator;
 
-    private string currentAnimation;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -34,18 +32,18 @@ public class BlairBehaviour : MonoBehaviour
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
             sr.flipX = false;
-            animator.Play("blairMoving");
+            animator.SetBool("isMoving", true);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             sr.flipX = true;
-            animator.Play("blairMoving");
+            animator.SetBool("isMoving", true);
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            animator.Play("blairIdle");
+            animator.SetBool("isMoving", false);
         }
     }
 
@@ -53,29 +51,34 @@ public class BlairBehaviour : MonoBehaviour
     {
         bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Ground"));
 
+        if (isGrounded)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        else
+        {
+            animator.SetBool("isJumping", true);
+        }
+
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
     }
 
-    void SetCurrentAnimation(string newAnimation)
-    {
-        if (currentAnimation.Equals("blairIdle") && newAnimation.Equals("blairPushing"))
-        {
-            currentAnimation = newAnimation;
-        }
-        else
-        {
-
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            animator.Play("blairPushing");
+            animator.SetBool("isPushing", true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            animator.SetBool("isPushing", false);
         }
     }
 }
