@@ -10447,6 +10447,39 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &594895911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5809196431439352583, guid: f249c522f2daf9247935bbc92385d895, type: 3}
+  m_PrefabInstance: {fileID: 5588373557771333085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &594895914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594895911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632c2b04bd062bc4c99e36283db0c425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog:
+  - "Blair| Uaaaaau, um aqu\xE1rio! Que tipo de peixe ser\xE1 que vivia a\xED, Noite?"
+  - "Noite| Acho que isso n\xE3o \xE9 um aqu\xE1rio, n\xE3o, Blair."
+  - "Blair| Como n\xE3o? O que voc\xEA acha, senhora joaninha?"
+  - "Blair| Como n\xE3o? O que voc\xEA acha, senhora joaninha?"
+  - "Joaninha| \u2026"
+  - "Noite| Voc\xEA ainda t\xE1 carregando essa joaninha?"
+  - "Blair| Pra sua informa\xE7\xE3o, eu e a Joanna somos \xF3timas amigas\u2026"
+  - 'Noite| Joanna? '
+  - "Blair| Sim, \xE9 o nome dela, duh."
+  - "Noite| Claro\u2026 como eu n\xE3o pensei nisso? \u2026 Enfim\u2026"
+  - "Noite| Isso \xE9 um frasco de po\xE7\xE3o. O que significa que devemos estar
+    no caminho certo."
+  - Blair| Oh! Acho que faz mais sentido mesmo.
+  - 
+  dialogBox: {fileID: 96130859}
 --- !u!1 &738450501
 GameObject:
   m_ObjectHideFlags: 0
@@ -13076,6 +13109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogActivator
       objectReference: {fileID: 0}
+    - target: {fileID: 5809196431439352583, guid: f249c522f2daf9247935bbc92385d895, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7303652505526530912, guid: f249c522f2daf9247935bbc92385d895, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.87
@@ -13116,10 +13153,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8849894887371980612, guid: f249c522f2daf9247935bbc92385d895, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5809196431439352583, guid: f249c522f2daf9247935bbc92385d895, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 594895914}
   m_SourcePrefab: {fileID: 100100000, guid: f249c522f2daf9247935bbc92385d895, type: 3}
 --- !u!1001 &8461700145350782841
 PrefabInstance:
