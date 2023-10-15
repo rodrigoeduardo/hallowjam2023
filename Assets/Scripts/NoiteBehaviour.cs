@@ -10,8 +10,6 @@ public class NoiteBehaviour : MonoBehaviour
     private SpriteRenderer sr;
     private Animator animator;
 
-    private string currentAnimation;
-
     [SerializeField]
     bool doubleJump;
 
@@ -21,7 +19,6 @@ public class NoiteBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        currentAnimation = "blairIdle";
     }
 
     // Update is called once per frame
@@ -29,7 +26,6 @@ public class NoiteBehaviour : MonoBehaviour
     {
         Move();
         Jump();
-        // animator.Play(currentAnimation);
     }
 
     void Move()
@@ -75,10 +71,5 @@ public class NoiteBehaviour : MonoBehaviour
             doubleJump = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
-    }
-
-    void SetCurrentAnimation(string newAnimation)
-    {
-        currentAnimation = newAnimation;
     }
 }
