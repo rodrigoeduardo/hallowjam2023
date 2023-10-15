@@ -22,7 +22,7 @@ public class ObstacleBehaviour : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Noite"))
         {
-            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
         else
         {
