@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.layer == 6) return;
+        if (collision.gameObject.layer == 6 && !collision.CompareTag("Obstacle")) return;
         transform.position = new Vector2(startPosition.x, startPosition.y - 0.2f);
         pressed = true;
     }
@@ -25,7 +25,7 @@ public class Button : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.gameObject.layer == 6) return;
+        if (collision.gameObject.layer == 6 && !collision.CompareTag("Obstacle")) return;
         transform.position = startPosition;
         pressed = false;
     }

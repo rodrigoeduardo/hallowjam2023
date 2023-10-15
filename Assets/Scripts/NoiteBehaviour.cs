@@ -42,7 +42,7 @@ public class NoiteBehaviour : MonoBehaviour
 
     void Jump()
     {
-        bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.8f, LayerMask.GetMask("Ground"));
+        bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Ground"));
         if (isGrounded) doubleJump = true;
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
