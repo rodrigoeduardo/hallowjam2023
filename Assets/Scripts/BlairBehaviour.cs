@@ -15,6 +15,7 @@ public class BlairBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<AudioSource>().Play();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
