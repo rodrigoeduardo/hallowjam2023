@@ -7,6 +7,10 @@ public class NoiteBehaviour : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private Animator animator;
+
+    private string currentAnimation;
 
     [SerializeField]
     bool doubleJump;
@@ -15,6 +19,9 @@ public class NoiteBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        currentAnimation = "blairIdle";
     }
 
     // Update is called once per frame
@@ -22,6 +29,7 @@ public class NoiteBehaviour : MonoBehaviour
     {
         Move();
         Jump();
+        animator.Play(currentAnimation);
     }
 
     void Move()
@@ -29,14 +37,19 @@ public class NoiteBehaviour : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            sr.flipX = false;
+            SetCurrentAnimation("noiteMoving");
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            sr.flipX = true;
+            SetCurrentAnimation("noiteMoving");
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+            SetCurrentAnimation("noiteIdle");
         }
     }
 
@@ -48,10 +61,16 @@ public class NoiteBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-        } else if (Input.GetKeyDown(KeyCode.UpArrow) && !isGrounded && doubleJump)
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && !isGrounded && doubleJump)
         {
             doubleJump = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
+    }
+
+    void SetCurrentAnimation(string newAnimation)
+    {
+        currentAnimation = newAnimation;
     }
 }
