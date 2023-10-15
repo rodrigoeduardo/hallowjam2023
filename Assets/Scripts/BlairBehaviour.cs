@@ -19,6 +19,7 @@ public class BlairBehaviour : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Physics2D.IgnoreLayerCollision(7, 7);
+        currentAnimation = "blairIdle";
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class BlairBehaviour : MonoBehaviour
     {
         Move();
         Jump();
+        animator.Play(currentAnimation);
     }
 
     void Move()
@@ -34,18 +36,18 @@ public class BlairBehaviour : MonoBehaviour
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
             sr.flipX = false;
-            animator.Play("blairMoving");
+            SetCurrentAnimation("blairMoving", false);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             sr.flipX = true;
-            animator.Play("blairMoving");
+            SetCurrentAnimation("blairMoving", false);
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            animator.Play("blairIdle");
+            SetCurrentAnimation("blairIdle", false);
         }
     }
 
@@ -59,23 +61,27 @@ public class BlairBehaviour : MonoBehaviour
         }
     }
 
-    void SetCurrentAnimation(string newAnimation)
+    void SetCurrentAnimation(string newAnimation, bool isNotPushingAnymore)
     {
-        if (currentAnimation.Equals("blairIdle") && newAnimation.Equals("blairPushing"))
+        if (!currentAnimation.Equals("blairPushing") || isNotPushingAnymore)
         {
             currentAnimation = newAnimation;
         }
-        else
-        {
-
-        }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            animator.Play("blairPushing");
+            SetCurrentAnimation("blairPushing", false);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            SetCurrentAnimation("blairMoving", true);
         }
     }
 }
