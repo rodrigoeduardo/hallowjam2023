@@ -29,7 +29,7 @@ public class NoiteBehaviour : MonoBehaviour
     {
         Move();
         Jump();
-        animator.Play(currentAnimation);
+        // animator.Play(currentAnimation);
     }
 
     void Move()
@@ -38,25 +38,33 @@ public class NoiteBehaviour : MonoBehaviour
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
             sr.flipX = false;
-            SetCurrentAnimation("noiteMoving");
+            animator.SetBool("isMoving", true);
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             sr.flipX = true;
-            SetCurrentAnimation("noiteMoving");
+            animator.SetBool("isMoving", true);
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            SetCurrentAnimation("noiteIdle");
+            animator.SetBool("isMoving", false);
         }
     }
 
     void Jump()
     {
         bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Ground"));
-        if (isGrounded) doubleJump = true;
+        if (isGrounded)
+        {
+            doubleJump = true;
+            animator.SetBool("isJumping", false);
+        }
+        else
+        {
+            animator.SetBool("isJumping", true);
+        }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
