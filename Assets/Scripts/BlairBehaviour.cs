@@ -10,8 +10,6 @@ public class BlairBehaviour : MonoBehaviour
     private SpriteRenderer sr;
     private Animator animator;
 
-    private string currentAnimation;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +17,6 @@ public class BlairBehaviour : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Physics2D.IgnoreLayerCollision(7, 7);
-        currentAnimation = "blairIdle";
     }
 
     // Update is called once per frame
@@ -27,7 +24,6 @@ public class BlairBehaviour : MonoBehaviour
     {
         Move();
         Jump();
-        animator.Play(currentAnimation);
     }
 
     void Move()
@@ -36,18 +32,18 @@ public class BlairBehaviour : MonoBehaviour
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
             sr.flipX = false;
-            SetCurrentAnimation("blairMoving", false);
+            animator.SetBool("isMoving", true);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             sr.flipX = true;
-            SetCurrentAnimation("blairMoving", false);
+            animator.SetBool("isMoving", true);
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-            SetCurrentAnimation("blairIdle", false);
+            animator.SetBool("isMoving", false);
         }
     }
 
@@ -55,17 +51,18 @@ public class BlairBehaviour : MonoBehaviour
     {
         bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Ground"));
 
+        if (isGrounded)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        else
+        {
+            animator.SetBool("isJumping", true);
+        }
+
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-        }
-    }
-
-    void SetCurrentAnimation(string newAnimation, bool isNotPushingAnymore)
-    {
-        if (!currentAnimation.Equals("blairPushing") || isNotPushingAnymore)
-        {
-            currentAnimation = newAnimation;
         }
     }
 
@@ -73,7 +70,7 @@ public class BlairBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            SetCurrentAnimation("blairPushing", false);
+            animator.SetBool("isPushing", true);
         }
     }
 
@@ -81,7 +78,7 @@ public class BlairBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            SetCurrentAnimation("blairMoving", true);
+            animator.SetBool("isPushing", false);
         }
     }
 }
