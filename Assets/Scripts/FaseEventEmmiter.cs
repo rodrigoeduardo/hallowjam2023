@@ -7,11 +7,12 @@ public class FaseEventEmmiter : MonoBehaviour
 {
     public string[] dialog; /* ARMAZENA AS FALAS DO DIÁLOGO DESSE EVENTO */
     public int index; /* ARMAZENA O ÍNDICE ATUAL DA FALA NO DIÁLOGO */
-    private bool hasNoiteArrived; /* ARMAZENA SE NOITE JÁ CHEGOU NO EVENTO */
-    private bool hasBlairArrived; /* ARMAZENA SE BLAIR JÁ CHEGOU NO EVENTO */
-    private bool hasPlayed; /* ARMAZENA SE O EVENTO JÁ FOI TOCADO OUTRA VEZ */
+    public bool hasNoiteArrived; /* ARMAZENA SE NOITE JÁ CHEGOU NO EVENTO */
+    public bool hasBlairArrived; /* ARMAZENA SE BLAIR JÁ CHEGOU NO EVENTO */
+    public bool hasPlayed; /* ARMAZENA SE O EVENTO JÁ FOI TOCADO OUTRA VEZ */
     public GameObject DialogBox; /* ARMAZENA A CAIXA DE DIÁLOGO */
     private bool hasReleased;
+    public bool fimFase;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,17 @@ public class FaseEventEmmiter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /* SE PUDER INICIAR O EVENTO, INICIA */
         if (canPlay())
         {
-            resolveDialog();
+            resolveDialog();    /* PASSA O DIÁLOGO */
+            if (index == dialog.Length)
+            { /* SE O DIÁLOGO TIVER ACABADO */
+                if (fimFase)
+                {    /* SE FOR O FIM DA FASE */
+                    GameObject.Find("Main Camera").GetComponent<CameraController>().changePosition = true; /* MUDA A CÂMERA PARA A PRÓXIMA */
+                }
+            }
         }
     }
 
@@ -57,18 +66,22 @@ public class FaseEventEmmiter : MonoBehaviour
     void resolveDialog()
     {
         DialogBox.SetActive(true);
-        if(Input.GetKey(KeyCode.Space) && hasReleased && index < dialog.Length){
+        if (Input.GetKey(KeyCode.Space) && hasReleased && index < dialog.Length)
+        {
             hasReleased = false;
-            index ++;
-            if(index != dialog.Length){
+            index++;
+            if (index != dialog.Length)
+            {
                 DialogBox.transform.GetChild(1).GetComponent<Text>().text = dialog[index];
             }
         }
-        else if(index == dialog.Length){
+        else if (index == dialog.Length)
+        {
             DialogBox.SetActive(false);
-            hasPlayed = false;
+            Destroy(gameObject);
         }
-        else if(!Input.GetKey(KeyCode.Space)){
+        else if (!Input.GetKey(KeyCode.Space))
+        {
             hasReleased = true;
         }
     }

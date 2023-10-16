@@ -18042,6 +18042,83 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &904151188
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1245290497786155238, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_Name
+      value: FaseEventEmmiter (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: fimFase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: DialogBox
+      value: 
+      objectReference: {fileID: 1664954163}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[0]
+      value: Parabens
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[1]
+      value: "Voc\xEA chegou no fim da fase"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
 --- !u!1 &951310397
 GameObject:
   m_ObjectHideFlags: 0
@@ -19538,7 +19615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[1]
-      value: "Esse \xE9 um teste de di\xE1logo"
+      value: "Este \xE9 o in\xEDcio da fase"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19556,6 +19633,10 @@ PrefabInstance:
     - target: {fileID: 1176261349825451092, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_Name
       value: Door2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176261349825451092, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3878409254215809935, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19743,4 +19824,5 @@ SceneRoots:
   - {fileID: 425913427}
   - {fileID: 2073150027}
   - {fileID: 7727801573044954377}
+  - {fileID: 904151188}
   - {fileID: 122550213}
