@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2002427205353071590}
   - component: {fileID: 1310356857842662023}
   - component: {fileID: 7702409180764100407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FaseEventEmmiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -92,3 +92,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: []
   index: 0
+  DialogBox: {fileID: 5525101528704146666, guid: 608d434526e47e54f8ad854d777dbbb3, type: 3}
