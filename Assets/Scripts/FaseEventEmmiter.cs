@@ -21,4 +21,12 @@ public class FaseEventEmmiter : MonoBehaviour
     {
         
     }
+
+    /* RETORNA SE O EVENTO PODE SER INICIADO */
+    bool canPlay(){ 
+        if(hasBlairArrived == true && hasNoiteArrived == true && hasPlayed == false){
+            return true;
+        }
+        return false;
+    }
 }
