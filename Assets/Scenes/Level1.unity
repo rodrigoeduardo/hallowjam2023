@@ -430,6 +430,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
+--- !u!1 &410203075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5160312030538062366, guid: 608d434526e47e54f8ad854d777dbbb3, type: 3}
+  m_PrefabInstance: {fileID: 8566991955608996228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &410203077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410203075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2dd2c5bf866dc4199ff7c9d904a3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &425913427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18104,15 +18121,53 @@ PrefabInstance:
       objectReference: {fileID: 1664954163}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.size
-      value: 2
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[0]
-      value: Parabens
+      value: "Blair| Uaaaaau, um aqu\xE1rio! Que tipo de peixe ser\xE1 que vivia
+        a\xED, Noite?"
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[1]
-      value: "Voc\xEA chegou no fim da fase"
+      value: "Noite| Acho que isso n\xE3o \xE9 um aqu\xE1rio, n\xE3o, Blair."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[2]
+      value: "Blair| Como n\xE3o? O que voc\xEA acha, senhora joaninha? "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[3]
+      value: "Joaninha| \u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[4]
+      value: "Noite| Voc\xEA ainda t\xE1 carregando essa joaninha? "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[5]
+      value: "Blair| Pra sua informa\xE7\xE3o, eu e a Joanna somos \xF3timas amigas\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[6]
+      value: 'Noite| Joanna?  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[7]
+      value: "Blair| Sim, \xE9 o nome dela, duh. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[8]
+      value: "Noite| Claro\u2026 Eu devia ter pensado nisso \u2026 Enfim\u2026 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[9]
+      value: "Noite| Isso \xE9 um frasco de po\xE7\xE3o. O que significa que devemos
+        estar no caminho certo. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[10]
+      value: 'Blair| Oh! Acho que faz mais sentido mesmo. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18669,7 +18724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 503810715946079130, guid: 1001c82931d00c348b254107d03d4a65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.11
+      value: -4.29
       objectReference: {fileID: 0}
     - target: {fileID: 503810715946079130, guid: 1001c82931d00c348b254107d03d4a65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19500,12 +19555,20 @@ PrefabInstance:
       value: Blair
       objectReference: {fileID: 0}
     - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.07
+      value: -3.94
       objectReference: {fileID: 0}
     - target: {fileID: 6806561150177103577, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19539,6 +19602,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8596893456500054955, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_Size.x
+      value: 1.170497
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596893456500054955, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9863272
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596893456500054955, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03017664
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596893456500054955, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.016053677
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19560,6 +19639,18 @@ PrefabInstance:
     - target: {fileID: 1245290497786155238, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: m_Name
       value: FaseEventEmmiter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245290497786155238, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310356857842662023, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.94129276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310356857842662023, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.029353619
       objectReference: {fileID: 0}
     - target: {fileID: 2002427205353071590, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19607,15 +19698,33 @@ PrefabInstance:
       objectReference: {fileID: 1664954163}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[0]
-      value: "Ol\xE1"
+      value: "Blair| Uau! Que legal! \xC9 bem mais legal que no vilarejo."
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[1]
-      value: "Este \xE9 o in\xEDcio da fase"
+      value: "Blair| Pera, aquilo \xE9 uma joaninha m\xE1gica?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[2]
+      value: "(Blair se arremessa no ch\xE3o e come\xE7a a brincar com a tal joaninha
+        m\xE1gica)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[3]
+      value: (...)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[4]
+      value: "(\xC9 uma joaninha comum.)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
+      propertyPath: dialog.Array.data[5]
+      value: "Noite| \u2026 Foco, Blair. Vamos ter que usar a cabe\xE7a se quisermos
+        chegar no cora\xE7\xE3o da floresta."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19636,7 +19745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1176261349825451092, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3878409254215809935, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19786,7 +19895,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5160312030538062366, guid: 608d434526e47e54f8ad854d777dbbb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 410203077}
   m_SourcePrefab: {fileID: 100100000, guid: 608d434526e47e54f8ad854d777dbbb3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

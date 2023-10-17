@@ -19,7 +19,7 @@ public class FaseEventEmmiter : MonoBehaviour
         hasNoiteArrived = hasBlairArrived = hasPlayed = false;
         index = 0;
         hasReleased = true;
-        DialogBox.transform.GetChild(1).GetComponent<Text>().text = dialog[index];
+
     }
 
     // Update is called once per frame
@@ -28,6 +28,20 @@ public class FaseEventEmmiter : MonoBehaviour
         /* SE PUDER INICIAR O EVENTO, INICIA */
         if (canPlay())
         {
+            if (index == 0)
+            {
+                if (dialog[index].Split("|").Length >= 2)
+                {
+                    string locutor = dialog[index].Split("|")[0];
+                    string text = dialog[index].Split("|")[1];
+                    if (locutor != null)
+                    {
+                        DialogBox.transform.GetChild(0).GetComponent<Portrait>().resolveTextPortrait(locutor);
+                    }
+                    DialogBox.transform.GetChild(1).GetComponent<Text>().text = text;
+                }
+                else DialogBox.transform.GetChild(1).GetComponent<Text>().text = dialog[index];
+            }
             resolveDialog();    /* PASSA O DIÁLOGO */
             if (index == dialog.Length)
             { /* SE O DIÁLOGO TIVER ACABADO */
@@ -72,12 +86,26 @@ public class FaseEventEmmiter : MonoBehaviour
             index++;
             if (index != dialog.Length)
             {
-                DialogBox.transform.GetChild(1).GetComponent<Text>().text = dialog[index];
+                if (dialog[index].Split("|").Length >= 2)
+                {
+                    string locutor = dialog[index].Split("|")[0];
+                    string text = dialog[index].Split("|")[1];
+                    if (locutor != null)
+                    {
+                        DialogBox.transform.GetChild(0).GetComponent<Portrait>().resolveTextPortrait(locutor);
+                    }
+                    DialogBox.transform.GetChild(1).GetComponent<Text>().text = text;
+                }
+                else
+                {
+                    DialogBox.transform.GetChild(1).GetComponent<Text>().text = dialog[index];
+                }
             }
         }
         else if (index == dialog.Length)
         {
             DialogBox.SetActive(false);
+            index = 0;
             Destroy(gameObject);
         }
         else if (!Input.GetKey(KeyCode.Space))

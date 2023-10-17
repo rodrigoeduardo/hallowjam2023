@@ -49,7 +49,7 @@ public class BlairBehaviour : MonoBehaviour
 
     void Jump()
     {
-        bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.2f, LayerMask.GetMask("Ground"));
+        bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.5f, LayerMask.GetMask("Ground"));
 
         if (isGrounded)
         {
