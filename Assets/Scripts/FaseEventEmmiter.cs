@@ -53,16 +53,19 @@ public class FaseEventEmmiter : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         /* MARCANDO OS PERSONAGENS QUE CHEGAM NO EVENTO */
-        if (collision.CompareTag("Blair"))
+        if (collision.gameObject.CompareTag("Blair"))
         {
             hasBlairArrived = true;
         }
-        if (collision.CompareTag("Noite"))
+        if (collision.gameObject.CompareTag("Noite"))
         {
             hasNoiteArrived = true;
+        }
+        if(hasNoiteArrived && hasBlairArrived){
+            GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
 
