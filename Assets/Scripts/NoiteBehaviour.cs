@@ -6,6 +6,7 @@ public class NoiteBehaviour : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpSpeed;
+    public GameObject dialogBox;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator animator;
@@ -30,17 +31,25 @@ public class NoiteBehaviour : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (!dialogBox.activeSelf)
         {
-            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-            sr.flipX = false;
-            animator.SetBool("isMoving", true);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-            sr.flipX = true;
-            animator.SetBool("isMoving", true);
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                sr.flipX = false;
+                animator.SetBool("isMoving", true);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+                sr.flipX = true;
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+                animator.SetBool("isMoving", false);
+            }
         }
         else
         {

@@ -18762,6 +18762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Noite
       objectReference: {fileID: 0}
+    - target: {fileID: 7758474564743735532, guid: 1001c82931d00c348b254107d03d4a65, type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 1664954163}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19618,6 +19622,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.016053677
       objectReference: {fileID: 0}
+    - target: {fileID: 8786993061789946437, guid: 396acf8c0932f5345a5911b48b8ad622, type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 1664954163}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19745,7 +19753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1176261349825451092, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3878409254215809935, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19757,7 +19765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878409254215809935, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3878409254215809935, guid: f434aa4f142f5e84fb3d03b54bdf0379, type: 3}
       propertyPath: m_LocalRotation.w
