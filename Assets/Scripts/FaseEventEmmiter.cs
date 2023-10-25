@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMOD.Studio;
 
 public class FaseEventEmmiter : MonoBehaviour
 {
@@ -12,14 +13,16 @@ public class FaseEventEmmiter : MonoBehaviour
     public bool hasPlayed; /* ARMAZENA SE O EVENTO JÁ FOI TOCADO OUTRA VEZ */
     public GameObject DialogBox; /* ARMAZENA A CAIXA DE DIÁLOGO */
     private bool hasReleased;
-    public bool fimFase;
+    public bool fimFase; /* ARMAZENA SE O EVENTO É O FIM DE UMA FASE */
+    private string fmodEventPath;
+    private bool hasRenderedText;
     // Start is called before the first frame update
     void Start()
     {
         hasNoiteArrived = hasBlairArrived = hasPlayed = false;
         index = 0;
         hasReleased = true;
-
+        hasRenderedText = true;
     }
 
     // Update is called once per frame
@@ -40,7 +43,7 @@ public class FaseEventEmmiter : MonoBehaviour
                     }
                     DialogBox.transform.GetChild(1).GetComponent<Text>().text = text;
                 }
-                else DialogBox.transform.GetChild(1).GetComponent<Text>().text = dialog[index];
+                else resolveDialog();
             }
             resolveDialog();    /* PASSA O DIÁLOGO */
             if (index == dialog.Length)
@@ -83,7 +86,7 @@ public class FaseEventEmmiter : MonoBehaviour
     void resolveDialog()
     {
         DialogBox.SetActive(true);
-        if (Input.GetKey(KeyCode.Space) && hasReleased && index < dialog.Length)
+        if (Input.GetKey(KeyCode.Space) && hasReleased && index < dialog.Length && hasRenderedText == true)
         {
             hasReleased = false;
             index++;
@@ -97,11 +100,11 @@ public class FaseEventEmmiter : MonoBehaviour
                     {
                         DialogBox.transform.GetChild(0).GetComponent<Portrait>().resolveTextPortrait(locutor);
                     }
-                    DialogBox.transform.GetChild(1).GetComponent<Text>().text = text;
+                    StartCoroutine(mountPhrase(text));
                 }
                 else
                 {
-                    DialogBox.transform.GetChild(1).GetComponent<Text>().text = dialog[index];
+                    StartCoroutine(mountPhrase(dialog[index]));
                 }
             }
         }
@@ -114,6 +117,35 @@ public class FaseEventEmmiter : MonoBehaviour
         else if (!Input.GetKey(KeyCode.Space))
         {
             hasReleased = true;
+        }
+    }
+
+    IEnumerator mountPhrase(string phrase){
+        DialogBox.transform.GetChild(1).GetComponent<Text>().text = "";
+        char[] letters = phrase.ToCharArray();
+        string newString = "";
+        int letterIndex = 0;
+        Debug.Log(letterIndex);
+        Debug.Log(letters.Length);
+        Debug.Log(Input.GetKey(KeyCode.Space));
+        while(letterIndex < letters.Length){
+            DialogBox.transform.GetChild(1).GetComponent<Text>().text += letters[letterIndex];
+            newString = DialogBox.transform.GetChild(1).GetComponent<Text>().text;
+            letterIndex ++;
+            fmodEventPath = "event:/SFX/Player/Blair talk";
+            FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEventPath);
+            eventInstance.start();
+            Debug.Log(newString.Length);
+            Debug.Log(DialogBox.transform.GetChild(1).GetComponent<Text>().text.Length);
+            if(letterIndex == letters.Length){
+                hasRenderedText = true;
+            }
+            else hasRenderedText = false;
+            yield return new WaitForSeconds(0.05f);
+        }
+        if(Input.GetKey(KeyCode.Space) && letterIndex > 5){
+            letterIndex = letters.Length;
+            DialogBox.transform.GetChild(1).GetComponent<Text>().text += phrase;
         }
     }
 }

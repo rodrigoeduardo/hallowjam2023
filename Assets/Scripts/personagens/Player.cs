@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlairBehaviour : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpSpeed;
     public GameObject dialogBox;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private SpriteRenderer sr;
-    private Animator animator;
+    protected Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -72,22 +72,6 @@ public class BlairBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            animator.SetBool("isPushing", true);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            animator.SetBool("isPushing", false);
         }
     }
 }
