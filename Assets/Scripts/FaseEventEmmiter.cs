@@ -50,6 +50,8 @@ public class FaseEventEmmiter : MonoBehaviour
             { /* SE O DIÁLOGO TIVER ACABADO */
                 if (fimFase)
                 {    /* SE FOR O FIM DA FASE */
+                    GameObject.Find("Noite").GetComponent<NoiteBehaviour>().spawnPosition = transform.position;
+                    GameObject.Find("Blair").GetComponent<NoiteBehaviour>().spawnPosition = transform.position;
                     GameObject.Find("Main Camera").GetComponent<CameraController>().changePosition = true; /* MUDA A CÂMERA PARA A PRÓXIMA */
                 }
             }

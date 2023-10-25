@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     private SpriteRenderer sr;
     protected Animator animator;
+    public Vector3 spawnPosition;
+    public KeyCode jumpButton;
+    public KeyCode rightButton;
+    public KeyCode leftButton;
 
     // Start is called before the first frame update
     void Start()
@@ -31,13 +35,13 @@ public class Player : MonoBehaviour
     {
         if (!dialogBox.activeSelf)
         {
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(rightButton))
             {
                 rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
                 sr.flipX = false;
                 animator.SetBool("isMoving", true);
             }
-            else if (Input.GetKey(KeyCode.A))
+            else if (Input.GetKey(leftButton))
             {
                 rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
                 sr.flipX = true;
@@ -56,7 +60,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Jump()
+    virtual public void Jump()
     {
         bool isGrounded = Physics2D.OverlapCircle(transform.position, 0.5f, LayerMask.GetMask("Ground"));
 
@@ -69,7 +73,7 @@ public class Player : MonoBehaviour
             animator.SetBool("isJumping", true);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(jumpButton) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
