@@ -15,15 +15,15 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
 
-        blairStartPosition = blair.transform.position;
-        noiteStartPosition = noite.transform.position;
+        blairStartPosition = blair.GetComponent<BlairBehaviour>().spawnPosition;
+        noiteStartPosition = noite.GetComponent<NoiteBehaviour>().spawnPosition;
         ResetLevel();
     }
 
     public void ResetLevel()
     {
 
-        blair.transform.position = blairStartPosition;
-        noite.transform.position = noiteStartPosition;
+        blair.transform.position = blair.GetComponent<BlairBehaviour>().spawnPosition;
+        noite.transform.position = noite.GetComponent<NoiteBehaviour>().spawnPosition;
     }
 }
