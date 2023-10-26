@@ -31,4 +31,9 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void FecharJogo()
+    {
+        Application.Quit();
+    }
 }
