@@ -154,6 +154,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2976
   Exists: 1
+--- !u!114 &-2276791007359417457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Actions/DoubleJump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Actions/DoubleJump
+  Guid:
+    Data1: -2077390861
+    Data2: 1213108909
+    Data3: 1675857057
+    Data4: -769775610
+  Banks:
+  - {fileID: 3867629450495790294}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 477
 --- !u!114 &-1164676968567763580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,12 +255,14 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -5237556944027059566}
   - {fileID: -1164676968567763580}
+  - {fileID: 5560212645845893761}
+  - {fileID: -2276791007359417457}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5328077513794600037}
   StringsBanks:
   - {fileID: 6732078316366778684}
-  cacheTime: 638340035003226830
+  cacheTime: 638340055148874349
   cacheVersion: 131608
 --- !u!114 &2027968106296680305
 MonoBehaviour:
@@ -297,7 +326,7 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638340035003196832
+  lastModified: 638340039147972735
   FileSizes:
   - Name: Desktop
     Value: 820256
@@ -337,10 +366,10 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638340035003226830
+  lastModified: 638340055148874349
   FileSizes:
   - Name: Desktop
-    Value: 3648
+    Value: 14848
   Exists: 1
 --- !u!114 &5328077513794600037
 MonoBehaviour:
@@ -357,11 +386,38 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638340035003056902
+  lastModified: 638340043833231689
   FileSizes:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &5560212645845893761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Actions/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Actions/Jump
+  Guid:
+    Data1: -1653343887
+    Data2: 1213672211
+    Data3: 1576281758
+    Data4: 120725161
+  Banks:
+  - {fileID: 3867629450495790294}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 335
 --- !u!114 &6238346643985953583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,10 +460,10 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638340035003066867
+  lastModified: 638340043833331676
   FileSizes:
   - Name: Desktop
-    Value: 924
+    Value: 1032
   Exists: 1
 --- !u!114 &6910186058490732586
 MonoBehaviour:

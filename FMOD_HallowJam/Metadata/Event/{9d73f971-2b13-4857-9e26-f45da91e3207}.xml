@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{1f4b36b9-5f3c-46fd-be54-a0d41500b8ca}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{319aa874-6509-472c-beeb-884d26d8ecd8}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{f7ee4723-15cf-47ac-a4f5-1cdb698ed82e}">
 		<relationship name="masterBus">
@@ -87,10 +90,10 @@
 	<object class="MixerBusPanner" id="{468c14d9-6b34-466c-8fd3-1904c2a70bba}" />
 	<object class="SingleSound" id="{1fe31158-794e-4e19-b112-e0c391d48081}">
 		<property name="length">
-			<value>0.38</value>
+			<value>0.33499999999999996</value>
 		</property>
 		<property name="timelockedOffset">
-			<value>0.060000000000000053</value>
+			<value>0.10500000000000002</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6b48432d-8f29-469a-bce8-f3a0944d9968}</destination>
@@ -112,7 +115,9 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{766cc6d0-9f64-41dd-a5cd-0f3755a536c6}">
 		<relationship name="effects">
+			<destination>{63a67ca4-7712-47b1-b1ca-9298f82b7880}</destination>
 			<destination>{5f8542bd-d641-4dc4-80d7-04c0b33fc159}</destination>
+			<destination>{746e586d-b300-45b9-b642-7e1c6a04f59e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2169dd97-2528-4567-8ed7-05152363819d}" />
@@ -123,6 +128,25 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f54efc61-8fc8-49da-84de-75faa77f3dac}" />
+	<object class="ThreeEQEffect" id="{63a67ca4-7712-47b1-b1ca-9298f82b7880}">
+		<property name="midGain">
+			<value>-22</value>
+		</property>
+		<property name="highGain">
+			<value>-15.5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{5f8542bd-d641-4dc4-80d7-04c0b33fc159}" />
+	<object class="PitchShifterEffect" id="{746e586d-b300-45b9-b642-7e1c6a04f59e}">
+		<property name="pitch">
+			<value>1.14999998</value>
+		</property>
+		<property name="fftSize">
+			<value>256</value>
+		</property>
+		<property name="overlap">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{09d6329b-3219-4ae6-a265-2ef90ee23acb}" />
 </objects>

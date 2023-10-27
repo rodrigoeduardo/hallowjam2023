@@ -21,10 +21,14 @@ public class NoiteBehaviour : Player
 
         if (Input.GetKeyDown(jumpButton) && isGrounded)
         {
+            FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Actions/Jump");
+            eventInstance.start();
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
         else if (Input.GetKeyDown(jumpButton) && !isGrounded && doubleJump)
         {
+            FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Actions/DoubleJump");
+            eventInstance.start();
             doubleJump = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD.Studio;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     public KeyCode jumpButton;
     public KeyCode rightButton;
     public KeyCode leftButton;
+    private FMOD.Studio.EventInstance eventInstance;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Physics2D.IgnoreLayerCollision(7, 7);
+        eventInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Actions/Jump");
     }
 
     // Update is called once per frame
@@ -75,6 +78,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(jumpButton) && isGrounded)
         {
+            eventInstance.start();
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
     }
