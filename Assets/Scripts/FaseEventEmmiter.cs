@@ -51,7 +51,7 @@ public class FaseEventEmmiter : MonoBehaviour
                 if (fimFase)
                 {    /* SE FOR O FIM DA FASE */
                     GameObject.Find("Noite").GetComponent<NoiteBehaviour>().spawnPosition = transform.position;
-                    GameObject.Find("Blair").GetComponent<NoiteBehaviour>().spawnPosition = transform.position;
+                    GameObject.Find("Blair").GetComponent<BlairBehaviour>().spawnPosition = transform.position;
                     GameObject.Find("Main Camera").GetComponent<CameraController>().changePosition = true; /* MUDA A CÂMERA PARA A PRÓXIMA */
                 }
             }
@@ -59,6 +59,22 @@ public class FaseEventEmmiter : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        /* MARCANDO OS PERSONAGENS QUE CHEGAM NO EVENTO */
+        if (collision.gameObject.CompareTag("Blair"))
+        {
+            hasBlairArrived = true;
+        }
+        if (collision.gameObject.CompareTag("Noite"))
+        {
+            hasNoiteArrived = true;
+        }
+        if(hasNoiteArrived && hasBlairArrived){
+            GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         /* MARCANDO OS PERSONAGENS QUE CHEGAM NO EVENTO */
         if (collision.gameObject.CompareTag("Blair"))
