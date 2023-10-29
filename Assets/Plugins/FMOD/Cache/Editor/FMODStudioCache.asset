@@ -235,6 +235,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 190
+--- !u!114 &-1047300481775815032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Start
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Start
+  Guid:
+    Data1: -1567383025
+    Data2: 1120350830
+    Data3: 1228562621
+    Data4: -738904648
+  Banks:
+  - {fileID: 3867629450495790294}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-755916856408184140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,12 +312,15 @@ MonoBehaviour:
   - {fileID: 5560212645845893761}
   - {fileID: -2276791007359417457}
   - {fileID: -4169721510613197293}
+  - {fileID: 7475029653304219997}
+  - {fileID: 5880568868743651790}
+  - {fileID: -1047300481775815032}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5328077513794600037}
   StringsBanks:
   - {fileID: 6732078316366778684}
-  cacheTime: 638340115694350090
+  cacheTime: 638342037659375066
   cacheVersion: 131608
 --- !u!114 &2027968106296680305
 MonoBehaviour:
@@ -354,7 +384,7 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638340039147972735
+  lastModified: 638342037654999528
   FileSizes:
   - Name: Desktop
     Value: 820256
@@ -394,10 +424,10 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638340115694350090
+  lastModified: 638342037659375066
   FileSizes:
   - Name: Desktop
-    Value: 25280
+    Value: 112128
   Exists: 1
 --- !u!114 &5328077513794600037
 MonoBehaviour:
@@ -414,7 +444,7 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638340111462657612
+  lastModified: 638342037652800927
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -446,6 +476,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 335
+--- !u!114 &5880568868743651790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Blair Meow Force
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Blair Meow Force
+  Guid:
+    Data1: 169292707
+    Data2: 1246896218
+    Data3: 2056385185
+    Data4: -1240964032
+  Banks:
+  - {fileID: 3867629450495790294}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2600
 --- !u!114 &6238346643985953583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,10 +545,10 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638340111462742876
+  lastModified: 638342037652900905
   FileSizes:
   - Name: Desktop
-    Value: 1088
+    Value: 1234
   Exists: 1
 --- !u!114 &6910186058490732586
 MonoBehaviour:
@@ -513,3 +570,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 910
   Exists: 1
+--- !u!114 &7475029653304219997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambient/Rock Moving
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambient/Rock Moving
+  Guid:
+    Data1: -2053057394
+    Data2: 1102407722
+    Data3: 1530265004
+    Data4: -206760271
+  Banks:
+  - {fileID: 3867629450495790294}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1618
