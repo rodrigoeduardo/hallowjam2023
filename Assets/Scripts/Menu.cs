@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
 
     public void Jogar()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Cutscene");
     }
 
     public void Creditos()
