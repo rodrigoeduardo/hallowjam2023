@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class Portrait : MonoBehaviour
 {
-    private Image portraitImage;
+    public Sprite portraitImageBlair;
+    public Sprite portraitImageNoite;
+    public Sprite portraitImageBruxa;
+    public Sprite portraitImageJoaninha;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        portraitImage = gameObject.GetComponent<Image>();
+        
     }
 
     // Update is called once per frame
@@ -21,19 +25,21 @@ public class Portrait : MonoBehaviour
 
     public void resolveTextPortrait(string locutor)
     {
-        portraitImage = gameObject.GetComponent<Image>();
         Sprite newSprite;
+        Debug.Log("teste");
         switch (locutor)
         {
             case "Blair":
-                newSprite = Resources.Load<Sprite>("Sprites/Blair/BlairPortrait");
-                Debug.Log(newSprite);
-                portraitImage.sprite = newSprite;
+                gameObject.GetComponent<Image>().sprite = portraitImageBlair;
                 break;
             case "Noite":
-                newSprite = Resources.Load<Sprite>("Sprites/Noite/NoitePortrait");
-                Debug.Log(newSprite);
-                portraitImage.sprite = newSprite;
+                gameObject.GetComponent<Image>().sprite = portraitImageNoite;
+                break;
+            case "Joaninha":
+                gameObject.GetComponent<Image>().sprite = portraitImageJoaninha;
+                break;
+            case "Bruxa":
+                gameObject.GetComponent<Image>().sprite = portraitImageJoaninha;
                 break;
         }
     }

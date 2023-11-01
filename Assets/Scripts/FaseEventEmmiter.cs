@@ -39,9 +39,9 @@ public class FaseEventEmmiter : MonoBehaviour
                     string text = dialog[index].Split("|")[1];
                     if (locutor != null)
                     {
-                        DialogBox.transform.GetChild(0).GetComponent<Portrait>().resolveTextPortrait(locutor);
+                        DialogBox.GetComponent<Portrait>().resolveTextPortrait(locutor);
                     }
-                    DialogBox.transform.GetChild(1).GetComponent<Text>().text = text;
+                    DialogBox.transform.GetChild(0).GetComponent<Text>().text = text;
                 }
                 else resolveDialog();
             }
@@ -116,7 +116,7 @@ public class FaseEventEmmiter : MonoBehaviour
                     string text = dialog[index].Split("|")[1];
                     if (locutor != null)
                     {
-                        DialogBox.transform.GetChild(0).GetComponent<Portrait>().resolveTextPortrait(locutor);
+                        DialogBox.GetComponent<Portrait>().resolveTextPortrait(locutor);
                     }
                     StartCoroutine(mountPhrase(text));
                 }
@@ -139,22 +139,17 @@ public class FaseEventEmmiter : MonoBehaviour
     }
 
     IEnumerator mountPhrase(string phrase){
-        DialogBox.transform.GetChild(1).GetComponent<Text>().text = "";
+        DialogBox.transform.GetChild(0).GetComponent<Text>().text = "";
         char[] letters = phrase.ToCharArray();
         string newString = "";
         int letterIndex = 0;
-        Debug.Log(letterIndex);
-        Debug.Log(letters.Length);
-        Debug.Log(Input.GetKey(KeyCode.Space));
         while(letterIndex < letters.Length){
-            DialogBox.transform.GetChild(1).GetComponent<Text>().text += letters[letterIndex];
-            newString = DialogBox.transform.GetChild(1).GetComponent<Text>().text;
+            DialogBox.transform.GetChild(0).GetComponent<Text>().text += letters[letterIndex];
+            newString = DialogBox.transform.GetChild(0).GetComponent<Text>().text;
             letterIndex ++;
             fmodEventPath = "event:/SFX/Player/Blair talk";
             FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEventPath);
             eventInstance.start();
-            Debug.Log(newString.Length);
-            Debug.Log(DialogBox.transform.GetChild(1).GetComponent<Text>().text.Length);
             if(letterIndex == letters.Length){
                 hasRenderedText = true;
             }
@@ -163,7 +158,7 @@ public class FaseEventEmmiter : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.Space) && letterIndex > 5){
             letterIndex = letters.Length;
-            DialogBox.transform.GetChild(1).GetComponent<Text>().text += phrase;
+            DialogBox.transform.GetChild(0).GetComponent<Text>().text += phrase;
         }
     }
 }
