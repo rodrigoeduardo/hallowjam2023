@@ -321,7 +321,7 @@ MonoBehaviour:
   - {fileID: 5328077513794600037}
   StringsBanks:
   - {fileID: 6732078316366778684}
-  cacheTime: 638343956055765672
+  cacheTime: 638343967300473331
   cacheVersion: 131608
 --- !u!114 &2027968106296680305
 MonoBehaviour:
@@ -396,7 +396,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 68211
+  Length: 66466
 --- !u!114 &3432923851345007306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,10 +412,10 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638343905772968906
+  lastModified: 638343967300473331
   FileSizes:
   - Name: Desktop
-    Value: 1639168
+    Value: 1576320
   Exists: 1
 --- !u!114 &3661680583455997827
 MonoBehaviour:

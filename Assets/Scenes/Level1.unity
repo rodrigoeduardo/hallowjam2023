@@ -19153,7 +19153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[1]
-      value: Blair| Nao brinca. . . aquilo e uma joaninha magica?
+      value: Blair| Nao brinca... aquilo e uma joaninha magica?
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[2]
@@ -19161,7 +19161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[3]
-      value: (. . .)
+      value: (...)
       objectReference: {fileID: 0}
     - target: {fileID: 7702409180764100407, guid: d09646c50c9e6ed4eaa87c042e05f87c, type: 3}
       propertyPath: dialog.Array.data[4]
