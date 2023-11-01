@@ -315,12 +315,13 @@ MonoBehaviour:
   - {fileID: 7475029653304219997}
   - {fileID: 5880568868743651790}
   - {fileID: -1047300481775815032}
+  - {fileID: 2998556593302923094}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5328077513794600037}
   StringsBanks:
   - {fileID: 6732078316366778684}
-  cacheTime: 638342037659375066
+  cacheTime: 638343905772968906
   cacheVersion: 131608
 --- !u!114 &2027968106296680305
 MonoBehaviour:
@@ -369,6 +370,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 106
+--- !u!114 &2998556593302923094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/CutsceneInicial
+  m_EditorClassIdentifier: 
+  Path: event:/Music/CutsceneInicial
+  Guid:
+    Data1: -247711905
+    Data2: 1094177661
+    Data3: 991931823
+    Data4: 1514644310
+  Banks:
+  - {fileID: 3432923851345007306}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 68211
 --- !u!114 &3432923851345007306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,10 +412,10 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638342037654999528
+  lastModified: 638343905772968906
   FileSizes:
   - Name: Desktop
-    Value: 820256
+    Value: 1639168
   Exists: 1
 --- !u!114 &3661680583455997827
 MonoBehaviour:
@@ -444,7 +472,7 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638342037652800927
+  lastModified: 638343901810218196
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -545,10 +573,10 @@ MonoBehaviour:
   Path: FMOD_HallowJam/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638342037652900905
+  lastModified: 638343901810318147
   FileSizes:
   - Name: Desktop
-    Value: 1234
+    Value: 1292
   Exists: 1
 --- !u!114 &6910186058490732586
 MonoBehaviour:
