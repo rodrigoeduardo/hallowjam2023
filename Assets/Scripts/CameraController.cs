@@ -6,8 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField]
     Vector3 position1;
-    [SerializeField]
-    Vector3 position2;
+    public Vector3 position2;
     [SerializeField]
     float speed;
 

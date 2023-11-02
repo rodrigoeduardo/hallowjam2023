@@ -16,6 +16,7 @@ public class FaseEventEmmiter : MonoBehaviour
     public bool fimFase; /* ARMAZENA SE O EVENTO É O FIM DE UMA FASE */
     private string fmodEventPath;
     private bool hasRenderedText;
+    public Vector3  NextCameraPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +53,7 @@ public class FaseEventEmmiter : MonoBehaviour
                 {    /* SE FOR O FIM DA FASE */
                     GameObject.Find("Noite").GetComponent<NoiteBehaviour>().spawnPosition = transform.position;
                     GameObject.Find("Blair").GetComponent<BlairBehaviour>().spawnPosition = transform.position;
+                    GameObject.Find("Main Camera").GetComponent<CameraController>().position2    = NextCameraPosition;
                     GameObject.Find("Main Camera").GetComponent<CameraController>().changePosition = true; /* MUDA A CÂMERA PARA A PRÓXIMA */
                 }
             }
